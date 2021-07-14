@@ -46,6 +46,55 @@ if ( ! function_exists( 'understrap_theme_customize_register' ) ) {
 			)
 		);
 
+		// Social Media Links
+        $wp_customize->add_section('custom_social_links', array(
+            'title'         => __('Social Networks', 'site-theme'),
+            'priority'      => 130,
+            'description'   => "Add the links to social media pages for the icons in the footer"
+        ));
+        $wp_customize->add_setting('custom_facebook');
+        $wp_customize->add_setting('custom_instagram');
+        $wp_customize->add_setting('custom_pinterest');
+        $wp_customize->add_setting('custom_twitter');
+        $wp_customize->add_setting('custom_linkedin');
+        $wp_customize->add_setting('custom_youtube');
+        $wp_customize->add_control('custom_facebook', array(
+            'label'         => __('Facebook Page', 'site-theme'),
+            'section'       => 'custom_social_links',
+            'type'          => 'text',
+            'description'   => "Full Facebook page URL"
+        ));
+        $wp_customize->add_control('custom_instagram', array(
+            'label'         => __('Instagram Profile', 'site-theme'),
+            'section'       => 'custom_social_links',
+            'type'          => 'text',
+            'description'   => "Full Instagram profile URL"
+        ));
+        $wp_customize->add_control('custom_pinterest', array(
+            'label'         => __('Pinterest Link', 'site-theme'),
+            'section'       => 'custom_social_links',
+            'type'          => 'text',
+            'description'   => "Full Pinterest profile URL"
+        ));
+        $wp_customize->add_control('custom_twitter', array(
+            'label'         => __('Twitter Handle', 'site-theme'),
+            'section'       => 'custom_social_links',
+            'type'          => 'text',
+            'description'   => "Twitter account excluding '@' symbol"
+        ));
+        $wp_customize->add_control('custom_linkedin', array(
+            'label'         => __('Linkedin Page', 'site-theme'),
+            'section'       => 'custom_social_links',
+            'type'          => 'text',
+            'description'   => "Full LinkedIn page URL"
+        ));
+        $wp_customize->add_control('custom_youtube', array(
+            'label'         => __('Youtube Profile', 'site-theme'),
+            'section'       => 'custom_social_links',
+            'type'          => 'text',
+            'description'   => "Full Youtube profile URL"
+        ));
+
 		/**
 		 * Select sanitization function
 		 *
@@ -143,7 +192,7 @@ if ( ! function_exists( 'understrap_customize_preview_js' ) ) {
 	function understrap_customize_preview_js() {
 		wp_enqueue_script(
 			'understrap_customizer',
-			get_template_directory_uri() . '/js/customizer.js',
+			get_template_directory_uri() . '/assets/js/customizer.js',
 			array( 'customize-preview' ),
 			'20130508',
 			true

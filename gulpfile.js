@@ -287,20 +287,20 @@ gulp.task(
 			)
 			.pipe(
 				replace(
-					'/js/jquery.slim.min.js',
-					'/js' + paths.vendor + '/jquery.slim.min.js',
+					'/assets/js/jquery.slim.min.js',
+					'/assets/js' + paths.vendor + '/jquery.slim.min.js',
 					{ skipBinary: true }
 				)
 			)
 			.pipe(
-				replace('/js/popper.min.js', '/js' + paths.vendor + '/popper.min.js', {
+				replace('/assets/js/popper.min.js', '/assets/js' + paths.vendor + '/popper.min.js', {
 					skipBinary: true
 				})
 			)
 			.pipe(
 				replace(
-					'/js/skip-link-focus-fix.js',
-					'/js' + paths.vendor + '/skip-link-focus-fix.js',
+					'/assets/js/skip-link-focus-fix.js',
+					'/assets/js' + paths.vendor + '/skip-link-focus-fix.js',
 					{ skipBinary: true }
 				)
 			)

@@ -8,13 +8,10 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-	return;
-}
 ?>
 
-<div class="col-md-4 widget-area" id="secondary" role="complementary">
-
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
-
-</div><!-- #secondary -->
+<?php if ( is_active_sidebar( 'filters' ) ) : ?>
+<div class="sidebar primary-sidebar widget-area">
+    <?php dynamic_sidebar( 'filters' ); ?>
+</div>
+<?php endif; ?>

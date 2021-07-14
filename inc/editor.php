@@ -16,7 +16,7 @@ add_action( 'admin_init', 'understrap_wpdocs_theme_add_editor_styles' );
 
 if ( ! function_exists( 'understrap_wpdocs_theme_add_editor_styles' ) ) {
 	function understrap_wpdocs_theme_add_editor_styles() {
-		add_editor_style( 'css/custom-editor-style.min.css' );
+		add_editor_style( 'assets/css/custom-editor-style.min.css' );
 	}
 }
 
